@@ -21,10 +21,10 @@ provider "aws" {
 }
 
 resource "aws_instance" "app_server" {
-  ami           = "ami-08d70e59c07c61a3a"
+  ami           = "ami-0246e967de77a4393"
   instance_type = var.instance_type
 
-  tags = {
+  tags = merge({
     Name = var.instance_name
-  }
+  }, var.global_tags)
 }
