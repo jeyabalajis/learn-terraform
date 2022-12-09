@@ -23,7 +23,6 @@ provider "aws" {
 resource "aws_instance" "app_server" {
   ami           = "ami-08d70e59c07c61a3a"
   instance_type = var.instance_type
-  count = var.instance_count
 
   tags = {
     Name = var.instance_name
